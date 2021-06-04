@@ -1,7 +1,3 @@
 .vs/
-gibz.m151.data/bin/
-gibz.m151.data/obj/
-gibz.m151.business/bin/
-gibz.m151.business/obj/
-gibz.m151.web/bin/
-gibz.m151.web/obj/
+obj/
+bin/
