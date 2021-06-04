@@ -1,0 +1,18 @@
+﻿@model gibz.m151.data.Models.Person
+
+
+
+<!DOCTYPE html>
+
+
+@using (Html.BeginForm())
+{
+<h2>Find a Person</h2>
+<p>Enter the Id of the person you are looking for.</p>
+    <div>Id: @Html.TextBoxFor(x => x.Id)</div>
+   
+    <div> <input type="submit" value="senden" /> </div>
+
+}
+
+

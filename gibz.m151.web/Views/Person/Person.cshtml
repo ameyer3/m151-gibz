@@ -1,0 +1,18 @@
+﻿@model gibz.m151.data.Models.Person
+
+
+
+<!DOCTYPE html>
+
+
+@using (Html.BeginForm())
+{
+
+<div>Id: @Model.Id</div>
+<div>Name: @Model.Name</div>
+<div>Age: @Model.Age</div>
+<div>Married: @Model.Married</div>
+<p> @Html.ActionLink("Home", "Index", "Home")</p>
+
+}
+

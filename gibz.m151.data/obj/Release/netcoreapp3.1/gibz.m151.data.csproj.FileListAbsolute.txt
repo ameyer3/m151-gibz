@@ -1,0 +1,9 @@
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\bin\Release\netcoreapp3.1\gibz.m151.data.deps.json
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\bin\Release\netcoreapp3.1\gibz.m151.data.dll
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\bin\Release\netcoreapp3.1\gibz.m151.data.pdb
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\obj\Release\netcoreapp3.1\gibz.m151.data.csprojAssemblyReference.cache
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\obj\Release\netcoreapp3.1\gibz.m151.data.AssemblyInfoInputs.cache
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\obj\Release\netcoreapp3.1\gibz.m151.data.AssemblyInfo.cs
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\obj\Release\netcoreapp3.1\gibz.m151.data.csproj.CoreCompileInputs.cache
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\obj\Release\netcoreapp3.1\gibz.m151.data.dll
+C:\Users\meyera36\source\repos\gibz.m151.LayerTest\gibz.m151.data\obj\Release\netcoreapp3.1\gibz.m151.data.pdb
