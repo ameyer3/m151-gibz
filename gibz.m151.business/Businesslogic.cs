@@ -1,5 +1,4 @@
 ﻿using gibz.m151.data.Models;
-using gibz.m151.data.Data;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -19,7 +18,7 @@ namespace gibz.m151.business
 
         public static List<Person> GetAllPersons()
         {
-            return Data.personList;
+            return dbContext.Person.ToList<Person>();
         }
     }
 }
