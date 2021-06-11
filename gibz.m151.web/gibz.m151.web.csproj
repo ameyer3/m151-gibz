@@ -9,4 +9,10 @@
     <ProjectReference Include="..\gibz.m151.data\gibz.m151.data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\Content\Site.css">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

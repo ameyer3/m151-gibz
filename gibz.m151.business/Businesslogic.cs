@@ -11,9 +11,15 @@ namespace gibz.m151.business
         
         public static Person GetPerson(int id)
         {
-            Person person = dbContext.Person.First(x => x.Id == id);
-            //Person person = Data.personList.First(x => x.Id == id);
-            return person;
+            try
+            {
+                Person person = dbContext.Person.First(x => x.Id == id);
+                return person;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public static List<Person> GetAllPersons()

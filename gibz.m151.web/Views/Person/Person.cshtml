@@ -5,14 +5,18 @@
 <!DOCTYPE html>
 
 
-@using (Html.BeginForm())
+@if (Model == null)
+{
+    <h2>There is no person with that Id save in our Database.</h2>
+}
+else
 {
 
-<div>Id: @Model.Id</div>
-<div>Name: @Model.Name</div>
-<div>Age: @Model.Age</div>
-<div>Married: @Model.Married</div>
-<p> @Html.ActionLink("Home", "Index", "Home")</p>
+    <div>Id: @Model.Id</div>
+    <div>Name: @Model.Name</div>
+    <div>Age: @Model.Age</div>
+    <div>Married: @Model.Married</div>
+    <p> @Html.ActionLink("Home", "Index", "Home")</p>
 
 }
 

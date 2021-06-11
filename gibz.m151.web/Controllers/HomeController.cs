@@ -13,7 +13,8 @@ namespace WebApplication1.Controllers
         public IActionResult Index()
         {
             List<Person> persons = Businesslogic.GetAllPersons();
-            return View(persons);
+            int amountOfPersons = persons.Count();
+            return View(amountOfPersons);
         }
     }
 }
