@@ -1,4 +1,5 @@
-﻿using gibz.m151.data.Models;
+﻿using gibz.m151.business;
+using gibz.m151.data.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,8 @@ namespace WebApplication1.Controllers
        
         public IActionResult Index()
         {
-            return RedirectToAction("GetPersonById");
+            List<Person> persons = Businesslogic.GetAllPersons();
+            return View(persons);
         }
         //[HttpGet]
         //public ActionResult GetPersons()

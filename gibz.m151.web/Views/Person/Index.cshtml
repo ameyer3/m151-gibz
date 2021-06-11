@@ -1,5 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<gibz.m151.data.Models.Person>
+
+<!DOCTYPE html>
+
+
+<h1>Hello World</h1>
+<div>
+
+    <p>This is a list of all available people:</p>
+    <ul>
+        @foreach (gibz.m151.data.Models.Person person in Model)
+        {
+
+            <li>@person.Name</li>
+
+        }
+    </ul>
+</div>

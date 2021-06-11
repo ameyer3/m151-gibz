@@ -1,4 +1,4 @@
-﻿@model List<gibz.m151.data.Models.Person>
+﻿@model int
 
 <!DOCTYPE html>
 
@@ -6,14 +6,8 @@
 <h1>Hello World</h1>
 <div>
 
-
+    <p>What's up! These are all the people working for us. You can see a list of them.</p>
     <p>Have a look, you can @Html.ActionLink("search", "GetPersonById", "Person") for a Person.</p>
-    <p>This is a list of all available people:</p>
-    <ul>
-        @foreach (gibz.m151.data.Models.Person person in Model){
-
-        <li>@person.Name</li>
-
-    }
-    </ul>
+    <p>Currently there are so many people in our database:</p>
+    @Model
 </div>
