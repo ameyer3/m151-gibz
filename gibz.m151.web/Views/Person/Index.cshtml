@@ -5,13 +5,25 @@
 
 <h1>Hello World</h1>
 <div>
-
+    <p>@Html.ActionLink("Create New", "Edit")</p>
     <p>This is a list of all available people:</p>
     <ul>
         @foreach (gibz.m151.data.Models.Person person in Model)
         {
 
-            <li>@person.Name</li>
+            <li>
+                @person.Name
+
+                @Html.ActionLink("Edit", "Edit", new { id = person.Id }) | <!--dritter Parameter fügt Id der URL hinzu-->
+
+                @using (Html.BeginForm("Delete", "Person", person, FormMethod.Post, null, null))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="submit" value="Delete" class="deleteButton"
+                           onclick="return confirm('Solle die Person @person.Name wirklich gelöscht werden?')" /> <!--PopUp-->
+                }
+            </li>
+
 
         }
     </ul>

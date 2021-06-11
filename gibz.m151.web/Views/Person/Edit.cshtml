@@ -1,0 +1,47 @@
+﻿@model gibz.m151.data.Models.Person
+
+@if (Model != null)
+{
+    <h2>Edit</h2>
+}
+else
+{
+    <h2>Create</h2>
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Person</legend>
+        @if (Model != null)
+        {
+            @Html.HiddenFor(model => model.Id)
+        }
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Age)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Age)
+            
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Married)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Married)
+            
+        </div>
+        <p><input type="submit" value="Save" /> </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
