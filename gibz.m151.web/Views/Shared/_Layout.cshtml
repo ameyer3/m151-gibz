@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Personenverwaltung</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <h1>Personenverwaltung</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            
+            <li>@Html.ActionLink("Get All Persons", "Index", "Person")</li>
+            <li>@Html.ActionLink("Get Person By Id", "getPersonById", "Person")</li>
+
+        </ul>
+    </nav>
+    <main>
+        @RenderBody()
+    </main>
+
+</body>
+</html>
