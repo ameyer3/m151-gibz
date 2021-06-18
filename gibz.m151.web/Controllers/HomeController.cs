@@ -1,5 +1,6 @@
 ﻿using gibz.m151.business;
 using gibz.m151.data.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,16 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            List<Person> persons = Businesslogic.GetAllPersons();
-            int amountOfPersons = persons.Count();
-            return View(amountOfPersons);
+            if (HttpContext.Session.GetString("UserID") != null)
+            {
+                List<Person> persons = Businesslogic.GetAllPersons();
+                int amountOfPersons = persons.Count();
+                return View(amountOfPersons);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
     }
 }

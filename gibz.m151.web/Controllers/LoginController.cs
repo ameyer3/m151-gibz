@@ -1,5 +1,6 @@
 ﻿using gibz.m151.business;
 using gibz.m151.data.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -25,36 +26,18 @@ namespace WebApplication1.Controllers
             {
                 using (PersonDb db = new PersonDb())
                 {
-                    var obj = db.User.Where(a => a.UserName.Equals(user.UserName) && a.Password.Equals(user.Password)).FirstOrDefault();
-                    if (obj != null)
+                    var dbUser = db.User.Where(a => a.UserName.Equals(user.UserName) && a.Password.Equals(user.Password)).FirstOrDefault();
+                    if (dbUser != null)
                     {
-                        HttpContext.Current.Session["UserID"] = obj.Id.ToString();
-                        Session["UserID"] = obj.Id.ToString();
-                        Session["UserName"] = obj.UserName.ToString();
-                        return RedirectToAction("UserDashBoard");
+                        HttpContext.Session.SetString("UserID", dbUser.Id.ToString());
+                        HttpContext.Session.SetString("UserName", dbUser.UserName.ToString());
 
-
-                        //read from session
-                        //string value = (string)HttpContext.Current.Session["key"];
-
-                        //write to session
-                        //HttpContext.Current.Session["key"] = "value";
+                        return RedirectToAction("Index", "Home");
                     }
                 }
             }
             return View(user);
         }
 
-        public ActionResult UserDashboard()
-        {
-            if (Session["UserID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-        }
     }
 }
