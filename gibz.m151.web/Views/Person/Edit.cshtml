@@ -7,40 +7,54 @@
 else
 {
     <h2>Create</h2>
+    <p><b>Note:</b> When entering an already existing Id, the person corresponding to this Id will be edited.
+    Make sure to enter the personalnumber of the employee correctly.</p>
+
 }
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <fieldset>
-        <legend>Person</legend>
-        @if (Model != null)
-        {
-            @Html.HiddenFor(model => model.Id)
-        }
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Age)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Age)
-            
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Married)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Married)
-            
-        </div>
-        <p><input type="submit" value="Save" /> </p>
-    </fieldset>
+<fieldset>
+    <legend>Person</legend>
+    @if (Model != null)
+    {
+        @Html.HiddenFor(model => model.Id)
+    }
+    @if (Model == null)
+    {
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Id)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Id)
+
+    </div>
+    }
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Age)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Age)
+
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Married)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Married)
+
+    </div>
+    <p><input type="submit" value="Save" /> </p>
+</fieldset>
 }
+ 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

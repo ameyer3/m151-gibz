@@ -51,7 +51,8 @@ namespace WebApplication1.Controllers
         }
 
         //shows the site with the values, if existing
-        public ActionResult Edit(int id = 0)
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
             Person person = Businesslogic.ShowPersonToEdit(id);
             return View(person);

@@ -41,13 +41,14 @@ namespace gibz.m151.business
 
         public static void EditPerson(Person person)
         {
-            if (person.Id > 0)
+            Person personFromdbContext = dbContext.Person.Find(person.Id);
+            if (personFromdbContext != null)
             {
                 //Das Person Objekt wird manuell neu zogeordnet damit es modifiziert gespeichert werden kann
-                Person restaurantFromdbContext = dbContext.Person.Find(person.Id);
-                restaurantFromdbContext.Name = person.Name;
-                restaurantFromdbContext.Age = person.Age;
-                restaurantFromdbContext.Married = person.Married;
+               
+                personFromdbContext.Name = person.Name;
+                personFromdbContext.Age = person.Age;
+                personFromdbContext.Married = person.Married;
             }
             else
             {
