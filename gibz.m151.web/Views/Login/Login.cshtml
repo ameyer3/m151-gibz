@@ -1,19 +1,21 @@
-﻿@model int
+﻿@model gibz.m151.data.Models.User
 
 <!DOCTYPE html>
 
 
 <h1>Login</h1>
 <div>
-    <form method="post">
-        <div>
-            <label for="UserName">Username: </label>
-            <input type="text" name="UserName" value="" />
-        </div>
-        <div>
-            <label for="Password">Password: </label>
-            <input type="text" name="Password" value="" />
-        </div>
-        <input type="submit" value="einloggen"/>
-    </form>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        @Html.LabelFor(model => model.UserName)
+        @Html.EditorFor(model => model.UserName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Password)
+        @Html.EditorFor(model => model.Password)
+    </div>
+    <input type="submit" value="einloggen" />
+}
 </div>

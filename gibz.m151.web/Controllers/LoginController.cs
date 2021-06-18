@@ -39,5 +39,11 @@ namespace WebApplication1.Controllers
             return View(user);
         }
 
+        //[HttpPost]
+        //public ActionResult Logout()
+        //{
+            
+        //}
+
     }
 }
