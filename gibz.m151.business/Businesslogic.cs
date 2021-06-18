@@ -26,5 +26,36 @@ namespace gibz.m151.business
         {
             return dbContext.Person.ToList<Person>();
         }
+
+        public static void DeletePerson(Person person)
+        {
+            Person onePerson = dbContext.Person.Find(person.Id);
+            dbContext.Person.Remove(onePerson);
+            dbContext.SaveChanges();
+        }
+        public static Person ShowPersonToEdit(int id)
+        {
+            Person person = dbContext.Person.Find(id);
+            return person;
+        }
+
+        public static void EditPerson(Person person)
+        {
+            Person personFromdbContext = dbContext.Person.Find(person.Id);
+            if (personFromdbContext != null)
+            {
+                //Das Person Objekt wird manuell neu zogeordnet damit es modifiziert gespeichert werden kann
+               
+                personFromdbContext.Name = person.Name;
+                personFromdbContext.Age = person.Age;
+                personFromdbContext.Married = person.Married;
+            }
+            else
+            {
+                dbContext.Person.Add(person);
+            }
+            dbContext.SaveChanges();
+
+        }
     }
 }

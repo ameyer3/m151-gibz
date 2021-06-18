@@ -35,19 +35,40 @@ namespace WebApplication1.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GetPersonById(int id)
         {
             Person person = gibz.m151.business.Businesslogic.GetPerson(id);
             return View("Person", person);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(Person person)
+        {
+            Businesslogic.DeletePerson(person);
+            return RedirectToAction("Index");
+        }
+
+        //shows the site with the values, if existing
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Person person = Businesslogic.ShowPersonToEdit(id);
+            return View(person);
+        }
 
 
-        //[HttpDelete]
-        //public ActionResult deletePerson(int id)
-        //{
-        //    PersonList.Remove(PersonList.First(x => x.Id == id));
-        //    return View(PersonList);
-        //}
+        //wenn Save wurde geklickt und ein Person erstellt oder überschrieben wird
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Person person)
+        {
+            Businesslogic.EditPerson(person);
+            return RedirectToAction("Index");
+
+        }
+
+
     }
 }
