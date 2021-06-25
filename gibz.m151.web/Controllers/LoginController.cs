@@ -10,9 +10,7 @@ using System.Threading.Tasks;
 namespace WebApplication1.Controllers
 {
     public class LoginController : Controller
-    {
-        // https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/
-
+    { 
         public IActionResult Login()
         {
             return View();
@@ -30,7 +28,6 @@ namespace WebApplication1.Controllers
                     if (dbUser != null)
                     {
                         HttpContext.Session.SetString("UserID", dbUser.Id.ToString());
-                        HttpContext.Session.SetString("UserName", dbUser.UserName.ToString());
 
                         return RedirectToAction("Index", "Home");
                     }
@@ -39,11 +36,22 @@ namespace WebApplication1.Controllers
             return View(user);
         }
 
-        //[HttpPost]
-        //public ActionResult Logout()
-        //{
-            
-        //}
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            if (HttpContext.Session.GetString("UserID") != null)
+            {
+                HttpContext.Session.Remove("UserID");
 
+                // destroy session
+                HttpContext.Session.Clear();
+
+                return RedirectToAction("Login", "Login");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
     }
 }
