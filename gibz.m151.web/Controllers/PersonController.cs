@@ -23,19 +23,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Login", "Login");
             }
         }
-        //[HttpGet]
-        //public ActionResult GetPersons()
-        //{
 
-        //    return View(PersonList);
-        //}
-        //[HttpPost]
-        //public ActionResult PostPerson(int id, string name, string description, bool isHighlighted)
-        //{
-        //    Person Person = new Person() { Id = id, Name = name, Description = description, IsHighlighted = isHighlighted };
-        //    PersonList.Add(Person);
-        //    return View(PersonList);
-        //}
         [HttpGet]
         public ActionResult GetPersonById()
         {
