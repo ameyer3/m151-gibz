@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PasswordHasher.SHA256.ASP.NET.CORE.Identity" Version="1.0.1" />
+    <PackageReference Include="Scrypt.NET" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\gibz.m151.business\gibz.m151.business.csproj" />
     <ProjectReference Include="..\gibz.m151.data\gibz.m151.data.csproj" />
   </ItemGroup>

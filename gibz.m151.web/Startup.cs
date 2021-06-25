@@ -27,7 +27,7 @@ namespace WebApplication1
 
             services.AddSession(options =>
             {
-                //options.Cookie.Name = ".AdventureWorks.Session";
+                //options.Cookie.Name = ".AdventureWorks.Session";  
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict;
