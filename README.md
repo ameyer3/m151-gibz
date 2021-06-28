@@ -1,5 +1,4 @@
 # M151 Webproject
-Webproject, Alina Meyer, Annika Christen
  
 This Website serves the purpose to administrate persons.
 These persons that are saved in the database connected to the website are employees that should already be saved in a database with their own personal Id.
